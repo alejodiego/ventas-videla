@@ -1,0 +1,144 @@
+<----------componentes funcionales------------>
+-importar React (opcional)
+-debe tener una funcion
+-el nombre de la funcion debe empezar con mayusculas SIEMPRE
+-la funcion debe retornar algo (siempre debe ser un solo elemento)
+-se debe exportar la funcion
+
+<----------componentes------------>
+-Props
+-States
+-Ciclo de vida
+-Metodos del ciclo de vida
+
+<----------hooks------------>
+-siempre comienzan con use
+-siempre se declaran dentro de un componentes
+-son funciones
+-no se pueden declarar en condicionales (if)
+
+<----------Ciclo de vida de componentes y Metodos------------>
+-Montaje(Mount)
+    -constructor
+    -render
+    -componentDidMount
+-Actualizacion(Update)
+    -constructor
+    -render
+    -componentDidUpdate
+-Desmount(Unmount)
+    -componentWillUnmount
+
+<----------useEffect------------>
+-con esta configuracion el useEffect se ejecuta solo en el Montaje
+useEffect(()=>{
+    //bloque de codigo
+},[]);
+-con esta configuracion el useEffect se ejecuta en el montaje y cuando detecta cambios en valores del array de dependencias
+useEffect(()=>{
+    //bloque de codigo
+},[valores]);
+-con esta configuracion el useEffect se ejecuta en el Montaje y actualizaciones
+useEffect(()=>{
+    //bloque de codigo
+});
+
+<-----------------APIS------------------>
+XHR - Fetch (then async/await axios)
+
+http: 
+
+A - B
+Request - Response
+Client - Server
+
+Request-Cliente:
+ -URL - Direccion a donde apuntar
+ -Metodo - GET/POST/DELETE/PUT/PATCH
+ -Headers (Metadata) informacion de lo que estoy mandando, configuracion, tipo.
+ -Body - informacion que estoy mandando
+ -Version
+
+Response-Server:
+ -Version
+ -Headers
+ -Body
+ -Codigo  100-200-300-400-500
+
+ AJAX asynchronous js and xml
+
+-------FECH-------------
+
+fech(url,{
+    method: "POST",
+    headers:{'content-type': 'application/json'},
+    body: JSON.stringify({nombre:"Ale"})
+})
+
+fech(url)
+
+
+
+
+------- obtener productos de api ---------
+
+const URL_BASE = 'https://fakestoreapi.com/products';
+const URL_CAT = `${URL_BASE}/category/${id}`
+
+
+var URL_def = "";
+!id ? URL_def = URL_BASE : URL_def = URL_CAT
+
+useEffect = () => {
+const getProducts = async () => {
+  //     try{
+  //       const res = await fetch(URL_def);
+  //       const data = await res.json();
+  //       setProducts(data);
+  //     } catch {
+  //       console.log("error");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   getProducts();
+  // },[id]);
+
+
+
+
+
+  -----item detail container --------
+
+  // useEffect(() =>{
+  //   getDocs(productCollection)
+  //   .then((result)=>{
+  //     const listProducts = result.docs.map(item => {
+  //       return {
+  //         ...item.data(),
+  //         id:item.id
+  //       };
+  //     });
+  //     setProducts(listProducts);
+  //   })
+  //   .catch((error) =>{
+  //     console.log(error);
+  //   })
+  //   .finally(setLoading(false));
+
+  // });
+
+  // useEffect(() =>{
+  //   const getProducts = async () => {
+  //     try{
+  //       const res = await fetch("https://fakestoreapi.com/products/"+id);
+  //       const data = await res.json();
+  //       setProducts(data);
+  //     } catch {
+  //       console.log("error");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   getProducts();
+  // },[id]);
